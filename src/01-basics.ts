@@ -1,4 +1,4 @@
-import {Friend, Colleague, ColleagueHistory } from './myTypes'
+import {Friend, Colleague, ColleagueHistory} from './myTypes'
 
 const friend1 = {
     name: "Paul Fleming",
