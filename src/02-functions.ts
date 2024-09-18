@@ -63,6 +63,7 @@ function highestExtension(cs: Colleague[]) {
   console.log(sortColleagues(colleagues.current, (a, b) => (a.contact.extension - b.contact.extension),3));
   console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length),1));
   console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length))); // NEW
+  
   function findFriends(friendsArray: Friend[], friendfilter: (friend: Friend) => boolean): string[] {
     return friendsArray
       .filter(friendfilter) // Apply the callback function as the filtering condition
@@ -71,3 +72,20 @@ function highestExtension(cs: Colleague[]) {
   
   console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
   console.log(findFriends(friends, (friend) => friend.age < 35));
+
+  function addInterest(friend: Friend, newInterest: string): string[] {
+    // Initialize interests array if it does not exist
+    if (!friend.interests) {
+      friend.interests = [];
+    }
+  
+    // Add the new interest to the interests array
+    friend.interests.push(newInterest);
+  
+    // Return the updated interests array
+    return friend.interests;
+  }
+
+  console.log(addInterest(friends[0], 'Politics'))
+  console.log(addInterest(friends[1], 'Travel'));
+
